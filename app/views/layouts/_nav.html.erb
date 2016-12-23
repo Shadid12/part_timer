@@ -1,0 +1,14 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">PT</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+        <% else %>
+            <li><%= link_to "SignUp",  new_user_registration_path %></li>
+            <li><%= link_to "LogIn",  new_user_session_path %></li>
+        <% end %>
+
+      </ul>
+    </div>
+</nav>    
+
