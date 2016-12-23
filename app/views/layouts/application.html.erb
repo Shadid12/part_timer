@@ -11,8 +11,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-      
-      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
@@ -26,3 +26,24 @@
     
   </body>
 </html>
+
+<script type="text/javascript">
+  $("#send").click(function() {
+    var title = $("#title").val();
+    var description = $("#description").val();
+    
+    d = {
+      'title': title,
+      'description': description
+    }
+    
+    $.ajax({
+      type: "POST",
+      url: "/listings",
+      data: d
+    });
+    
+  });
+  
+  // $("#d").append(description)
+</script>

@@ -1,1 +1,8 @@
-<h1>Welcome to Part Timer!! your Local HR solution</h1>
+<h3> Welcome to PartTimer! your local HR solution</h3>
+
+<% if user_signed_in? %>
+    <p>Looking to hire part timers ??</p>
+        <%= link_to "Submit a Listing", new_listing_path, 
+        class:"btn waves-effect waves-light", type:"submit", name:"action" %>
+    </button>
+<% end %>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
+  devise_for :users
+  
+  authenticate :user do
+    resources :listings, only: [:new, :create]
+  end
+  resources :listings, only: [:index, :show]
+  
 end
